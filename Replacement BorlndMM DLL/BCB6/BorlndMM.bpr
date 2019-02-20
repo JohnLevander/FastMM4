@@ -11,10 +11,15 @@
     <DEFFILE value="Export.def"/>
     <RESDEPEN value="$(RESFILES)"/>
     <LIBFILES value=""/>
-    <LIBRARIES value=""/>
+    <LIBRARIES value="dclusr.lib L207_r61.lib bcb2kaxserver.lib indy.lib dbxcds.lib dclocx.lib 
+      soaprtl.lib bcbie.lib nmfast.lib dbexpress.lib inetdbxpress.lib inetdb.lib 
+      inetdbbde.lib inet.lib xmlrtl.lib"/>
     <SPARELIBS value="vcldb.lib dbrtl.lib adortl.lib bdertl.lib vcldbx.lib ibxpress.lib cds.lib 
       dsnap.lib bdecds.lib qrpt.lib teeui.lib teedb.lib tee.lib dss.lib 
-      teeqr.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib bcbsmp.lib"/>
+      teeqr.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib bcbsmp.lib xmlrtl.lib 
+      inet.lib inetdbbde.lib inetdb.lib inetdbxpress.lib dbexpress.lib 
+      nmfast.lib bcbie.lib soaprtl.lib dclocx.lib dbxcds.lib indy.lib 
+      bcb2kaxserver.lib L207_r61.lib dclusr.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
       vcldbx.bpi ibxpress.bpi cds.bpi dsnap.bpi bdecds.bpi qrpt.bpi teeui.bpi 
       teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
@@ -26,23 +31,22 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="_DEBUG"/>
+    <USERDEFINES value=""/>
     <SYSDEFINES value="NO_STRICT;_NO_VCL;USEPACKAGES"/>
     <MAINSOURCE value="BorlndMM.bpf"/>
-    <INCLUDEPATH value="&quot;F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
-    <LIBPATH value="&quot;F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <INCLUDEPATH value="&quot;c:\Projects\FastMM4\Replacement BorlndMM DLL\BCB6&quot;;$(BCB)\include;$(BCB)\include\vcl;c:\Projects\FastMM4"/>
+    <LIBPATH value="$(BCB)\Projects\Lib;&quot;c:\projects\FastMM4\Replacement BorlndMM DLL\BCB6&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
     <WARNINGS value="-w-par"/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
     <IDLCFLAGS value="-I&quot;F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6&quot; -I$(BCB)\include 
       -I$(BCB)\include\vcl -src_suffix cpp -D_DEBUG -boa"/>
-    <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k- -y -v -vi- 
-      -tWD -tWM -c"/>
-    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-WD -O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -tWD -tWM -c"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-D&quot;&quot; -B:0x1190000 -aa -Tpd -x -Gn -v"/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpd -x -Gn"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -91,13 +95,21 @@ ProductName=
 ProductVersion=1.0.0.0
 Comments=
 
+[Excluded Packages]
+..\DsLoader.bpl=(untitled)
+
 [HistoryLists\hlIncludePath]
-Count=1
-Item0=F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\include;$(BCB)\include\vcl
+Count=4
+Item0=c:\Projects\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\include;$(BCB)\include\vcl;c:\Projects\FastMM4
+Item1=c:\Projects\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\include;$(BCB)\include\vcl;c:\Projects\FastMM4\
+Item2=c:\Projects\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\include;$(BCB)\include\vcl
+Item3=F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\include;$(BCB)\include\vcl
 
 [HistoryLists\hlLibraryPath]
-Count=1
-Item0=F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\lib\obj;$(BCB)\lib
+Count=3
+Item0=$(BCB)\Projects\Lib;c:\projects\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\lib\obj;$(BCB)\lib
+Item1=c:\projects\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\lib\obj;$(BCB)\lib
+Item2=F:\FastMM492\FastMM4\Replacement BorlndMM DLL\BCB6;$(BCB)\lib\obj;$(BCB)\lib
 
 [HistoryLists\hlDebugSourcePath]
 Count=1
@@ -124,13 +136,13 @@ RemoteDebug=0
 
 [Compiler]
 ShowInfoMsgs=0
-LinkDebugVcl=1
+LinkDebugVcl=0
 LinkCGLIB=0
 
-[CORBA]
-AddServerUnit=1
-AddClientUnit=1
-PrecompiledHeaders=1
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
 
 [Linker]
 LibPrefix=
